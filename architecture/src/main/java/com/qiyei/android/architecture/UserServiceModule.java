@@ -1,5 +1,8 @@
 package com.qiyei.android.architecture;
 
+import com.qiyei.android.architecture.annotations.FAWVWUserService;
+import com.qiyei.android.architecture.annotations.MAUserService;
+
 import dagger.Binds;
 import dagger.Module;
 import dagger.hilt.InstallIn;
@@ -10,5 +13,10 @@ import dagger.hilt.android.components.ActivityComponent;
 public abstract class UserServiceModule {
 
     @Binds
-    public abstract IUserService providerIUserService(FAWVWUserServiceImpl service);
+    @FAWVWUserService
+    public abstract IUserService providerFAWVWUserService(FAWVWUserServiceImpl service);
+
+    @Binds
+    @MAUserService
+    public abstract IUserService providerMAUserService(MAUserServiceImpl service);
 }

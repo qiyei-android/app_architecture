@@ -9,6 +9,8 @@ import com.qiyei.android.architecture.IUserService;
 import com.qiyei.android.architecture.R;
 import com.qiyei.android.architecture.User;
 import com.qiyei.android.architecture.UserManager;
+import com.qiyei.android.architecture.annotations.FAWVWUserService;
+import com.qiyei.android.architecture.annotations.MAUserService;
 
 import javax.inject.Inject;
 
@@ -21,10 +23,17 @@ public class HiltDemoActivity extends AppCompatActivity {
 
     @Inject
     protected UserManager mUserManager;
+
     @Inject
     protected User mUser;
+
     @Inject
-    protected IUserService mUserService;
+    @FAWVWUserService
+    protected IUserService mFAWVWUserService;
+
+    @Inject
+    @MAUserService
+    protected IUserService mMAUserService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +44,7 @@ public class HiltDemoActivity extends AppCompatActivity {
 
         Log.i(TAG,"name=" + mUserManager.getName());
 
-        Log.i(TAG,"userService name=" + mUserService.name());
+        Log.i(TAG,"mFAWVWUserService name=" + mFAWVWUserService.name());
+        Log.i(TAG,"mMAUserService name=" + mMAUserService.name());
     }
 }
