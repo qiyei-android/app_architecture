@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.qiyei.android.architecture.IUserService;
 import com.qiyei.android.architecture.R;
 import com.qiyei.android.architecture.User;
 import com.qiyei.android.architecture.UserManager;
@@ -22,6 +23,8 @@ public class HiltDemoActivity extends AppCompatActivity {
     protected UserManager mUserManager;
     @Inject
     protected User mUser;
+    @Inject
+    protected IUserService mUserService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,5 +34,7 @@ public class HiltDemoActivity extends AppCompatActivity {
         Log.i(TAG,"user=" + mUser.getName());
 
         Log.i(TAG,"name=" + mUserManager.getName());
+
+        Log.i(TAG,"userService name=" + mUserService.name());
     }
 }
