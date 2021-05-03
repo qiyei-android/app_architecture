@@ -15,6 +15,7 @@ import com.qiyei.android.architecture.annotations.MAUserService;
 import javax.inject.Inject;
 
 import dagger.hilt.android.AndroidEntryPoint;
+import okhttp3.OkHttpClient;
 
 @AndroidEntryPoint
 public class HiltDemoActivity extends AppCompatActivity {
@@ -35,6 +36,9 @@ public class HiltDemoActivity extends AppCompatActivity {
     @MAUserService
     protected IUserService mMAUserService;
 
+    @Inject
+    protected OkHttpClient mOkHttpClient;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,5 +50,7 @@ public class HiltDemoActivity extends AppCompatActivity {
 
         Log.i(TAG,"mFAWVWUserService name=" + mFAWVWUserService.name());
         Log.i(TAG,"mMAUserService name=" + mMAUserService.name());
+
+        Log.i(TAG,"mOkHttpClient =" + mOkHttpClient.toString());
     }
 }
