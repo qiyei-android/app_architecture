@@ -1,6 +1,8 @@
 package com.qiyei.android.architecture.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +11,7 @@ import com.qiyei.android.architecture.hilt.IUserService;
 import com.qiyei.android.architecture.R;
 import com.qiyei.android.architecture.hilt.User;
 import com.qiyei.android.architecture.hilt.UserManager;
+import com.qiyei.android.architecture.hilt.UserViewModel;
 import com.qiyei.android.architecture.hilt.annotations.FAWVWUserService;
 import com.qiyei.android.architecture.hilt.annotations.MAUserService;
 
@@ -52,5 +55,12 @@ public class HiltDemoActivity extends AppCompatActivity {
         Log.i(TAG,"mMAUserService name=" + mMAUserService.name());
 
         Log.i(TAG,"mOkHttpClient =" + mOkHttpClient.toString());
+
+        UserViewModel vm = new ViewModelProvider(this).get(UserViewModel.class);
+        vm.getUserMutableLiveData().observe(this, user -> {
+            Log.i(TAG,"vm =" + user.toString());
+        });
+
+        vm.getUser();
     }
 }
