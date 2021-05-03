@@ -5,12 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.qiyei.android.architecture.IUserService;
+import com.qiyei.android.architecture.hilt.IUserService;
 import com.qiyei.android.architecture.R;
-import com.qiyei.android.architecture.User;
-import com.qiyei.android.architecture.UserManager;
-import com.qiyei.android.architecture.annotations.FAWVWUserService;
-import com.qiyei.android.architecture.annotations.MAUserService;
+import com.qiyei.android.architecture.hilt.User;
+import com.qiyei.android.architecture.hilt.UserManager;
+import com.qiyei.android.architecture.hilt.annotations.FAWVWUserService;
+import com.qiyei.android.architecture.hilt.annotations.MAUserService;
 
 import javax.inject.Inject;
 

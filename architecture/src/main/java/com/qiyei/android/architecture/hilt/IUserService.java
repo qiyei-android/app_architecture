@@ -1,4 +1,4 @@
-package com.qiyei.android.architecture;
+package com.qiyei.android.architecture.hilt;
 
 public interface IUserService {
 

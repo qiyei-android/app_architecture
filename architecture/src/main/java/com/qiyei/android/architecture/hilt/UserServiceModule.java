@@ -1,7 +1,7 @@
-package com.qiyei.android.architecture;
+package com.qiyei.android.architecture.hilt;
 
-import com.qiyei.android.architecture.annotations.FAWVWUserService;
-import com.qiyei.android.architecture.annotations.MAUserService;
+import com.qiyei.android.architecture.hilt.annotations.FAWVWUserService;
+import com.qiyei.android.architecture.hilt.annotations.MAUserService;
 
 import dagger.Binds;
 import dagger.Module;
