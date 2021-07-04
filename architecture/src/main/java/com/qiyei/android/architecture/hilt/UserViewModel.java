@@ -1,7 +1,7 @@
 package com.qiyei.android.architecture.hilt;
 
 
-import androidx.hilt.lifecycle.ViewModelInject;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 

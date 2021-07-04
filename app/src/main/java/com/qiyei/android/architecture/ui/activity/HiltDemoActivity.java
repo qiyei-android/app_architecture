@@ -42,6 +42,8 @@ public class HiltDemoActivity extends AppCompatActivity {
     @Inject
     protected OkHttpClient mOkHttpClient;
 
+    protected UserViewModel mUserViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,12 +57,11 @@ public class HiltDemoActivity extends AppCompatActivity {
         Log.i(TAG,"mMAUserService name=" + mMAUserService.name());
 
         Log.i(TAG,"mOkHttpClient =" + mOkHttpClient.toString());
-
-        UserViewModel vm = new ViewModelProvider(this).get(UserViewModel.class);
-        vm.getUserMutableLiveData().observe(this, user -> {
+        mUserViewModel = new ViewModelProvider(this).get(UserViewModel.class);
+        mUserViewModel.getUserMutableLiveData().observe(this, user -> {
             Log.i(TAG,"vm =" + user.toString());
         });
 
-        vm.getUser();
+        mUserViewModel.getUser();
     }
 }
