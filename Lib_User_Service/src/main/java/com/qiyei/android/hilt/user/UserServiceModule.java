@@ -1,5 +1,8 @@
-package com.qiyei.android.architecture.hilt;
+package com.qiyei.android.hilt.user;
 
+
+
+import com.qiyei.android.architecture.hilt.IUserService;
 import com.qiyei.android.architecture.hilt.annotations.FAWVWUserService;
 import com.qiyei.android.architecture.hilt.annotations.MAUserService;
 

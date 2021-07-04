@@ -1,3 +1,4 @@
+include ':Lib_User_Service'
 include ':architecture'
 include ':app'
 rootProject.name = "app_architecture"
