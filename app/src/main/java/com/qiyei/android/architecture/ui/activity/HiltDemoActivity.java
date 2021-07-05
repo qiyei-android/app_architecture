@@ -46,6 +46,12 @@ public class HiltDemoActivity extends AppCompatActivity {
 
     protected UserViewModel mUserViewModel;
 
+    @Inject
+    protected ApplicationBean mAppBean;
+
+    @Inject
+    protected ActivityBean mContextBean;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
