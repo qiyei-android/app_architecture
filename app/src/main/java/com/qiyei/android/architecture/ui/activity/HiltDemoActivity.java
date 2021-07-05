@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.qiyei.android.architecture.hilt.ActivityBean;
+import com.qiyei.android.architecture.hilt.ApplicationBean;
 import com.qiyei.android.architecture.hilt.IUserService;
 import com.qiyei.android.architecture.R;
 import com.qiyei.android.architecture.hilt.User;
