@@ -1,4 +1,4 @@
-package com.qiyei.android.container
+package com.qiyei.android.provider
 
 import org.junit.Test
 

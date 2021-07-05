@@ -1,12 +1,12 @@
-package com.qiyei.android.container;
+package com.qiyei.android.provider;
 
 
 
 import com.qiyei.android.architecture.hilt.IUserService;
-import com.qiyei.android.architecture.hilt.annotations.FAWVWUserService;
-import com.qiyei.android.architecture.hilt.annotations.MAUserService;
 import com.qiyei.android.hilt.user.FAWVWUserServiceImpl;
 import com.qiyei.android.hilt.user.MAUserServiceImpl;
+import com.qiyei.android.provider.annotations.FAWVWUserService;
+import com.qiyei.android.provider.annotations.MAUserService;
 
 import dagger.Module;
 import dagger.Provides;

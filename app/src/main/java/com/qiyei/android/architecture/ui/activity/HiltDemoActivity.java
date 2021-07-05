@@ -14,8 +14,8 @@ import com.qiyei.android.architecture.R;
 import com.qiyei.android.architecture.hilt.User;
 import com.qiyei.android.architecture.hilt.UserManager;
 import com.qiyei.android.architecture.hilt.UserViewModel;
-import com.qiyei.android.architecture.hilt.annotations.FAWVWUserService;
-import com.qiyei.android.architecture.hilt.annotations.MAUserService;
+import com.qiyei.android.provider.annotations.FAWVWUserService;
+import com.qiyei.android.provider.annotations.MAUserService;
 
 import javax.inject.Inject;
 
