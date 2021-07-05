@@ -47,7 +47,7 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
 
     implementation project(":architecture")
-    implementation project(":Container")
+    implementation project(":Provider")
 
     implementation "com.google.dagger:hilt-android:2.36"
     kapt "com.google.dagger:hilt-android-compiler:2.36"
