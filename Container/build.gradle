@@ -1,22 +1,20 @@
 plugins {
-    id 'com.android.application'
+    id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
 }
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.qiyei.android.architecture"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -32,28 +30,17 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    viewBinding {
-        enabled = true
-    }
 }
 
 dependencies {
 
+    implementation project(":Lib_User_Service")
+
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.core:core-ktx:1.3.1'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-
-    implementation project(":architecture")
-    implementation project(":Container")
-
-    implementation "com.google.dagger:hilt-android:2.36"
-    kapt "com.google.dagger:hilt-android-compiler:2.36"
-
-    implementation "com.squareup.okhttp3:okhttp:4.9.1"
-
+    
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
