@@ -1,16 +1,15 @@
-package com.qiyei.android.architecture.ui.activity;
+package com.qiyei.android.architecture.app.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.util.Log;
 
+import com.qiyei.android.architecture.app.R;
 import com.qiyei.android.architecture.hilt.ActivityBean;
 import com.qiyei.android.architecture.hilt.ApplicationBean;
 import com.qiyei.android.architecture.hilt.IUserService;
-import com.qiyei.android.architecture.R;
 import com.qiyei.android.architecture.hilt.User;
 import com.qiyei.android.architecture.hilt.UserManager;
 import com.qiyei.android.architecture.hilt.UserViewModel;

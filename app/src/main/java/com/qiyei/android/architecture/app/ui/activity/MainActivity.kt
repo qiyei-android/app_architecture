@@ -1,9 +1,10 @@
-package com.qiyei.android.architecture.ui.activity
+package com.qiyei.android.architecture.app.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.qiyei.android.architecture.R
+import com.qiyei.android.architecture.app.R
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
