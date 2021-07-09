@@ -1,9 +1,4 @@
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
-}
+import com.qiyei.android.plugin.*
 
 android {
     compileSdkVersion 30
@@ -39,15 +34,15 @@ dependencies {
     implementation project(":Lib_User_Service")
     implementation project(":architecture")
 
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.1'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation Kotlin.stdlib
+    implementation AndroidX.core_ktx
+    implementation AndroidX.appcompat
+    implementation AndroidX.material
 
-    implementation "com.google.dagger:hilt-android:2.36"
-    kapt "com.google.dagger:hilt-android-compiler:2.36"
+    implementation Hilt.hilt_android
+    kapt Hilt.hilt_android_compiler
 
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    testImplementation Test.junit
+    androidTestImplementation Test.android_test_junit
+    androidTestImplementation Test.espresso_core
 }

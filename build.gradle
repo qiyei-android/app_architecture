@@ -16,11 +16,28 @@ buildscript {
     }
 }
 
+plugins {
+    id "com.qiyei.android.plugin" apply false
+}
+
 allprojects {
     repositories {
         google()
         jcenter()
     }
+}
+
+subprojects { subproject ->
+    if (subproject.name == "app") {
+        apply plugin: 'com.android.application'
+    } else {
+        apply plugin: 'com.android.library'
+    }
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-kapt'
+    apply plugin: 'dagger.hilt.android.plugin'
+
+    apply plugin: "com.qiyei.android.plugin"
 }
 
 task clean(type: Delete) {
