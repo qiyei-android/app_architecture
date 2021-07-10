@@ -19,7 +19,11 @@ repositories {
     mavenCentral()
 }
 
+def path = System.getProperty("java.home") + File.separator + "lib"
+def rt = "rt.jar"
+
 dependencies {
+    compileOnly fileTree(dir: path, include: rt)
     implementation gradleApi()
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
