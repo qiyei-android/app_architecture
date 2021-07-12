@@ -53,3 +53,21 @@ dependencies {
     androidTestImplementation Test.android_test_junit
     androidTestImplementation Test.espresso_core
 }
+
+
+this.project.afterEvaluate { project ->
+    def buildTask = project.tasks.getByName('assembleRelease')
+    if(buildTask == null) {
+        throw GradleException('the assembleRelease task is not found')
+    }
+    buildTask.dependsOn customTask
+}
+
+task customTask(dependsOn: 'packageRelease') {
+    group("test")
+
+    description("任务名+闭包创建任务")
+    doLast {
+        println("任务：" + name + " 属于分组：" + customTask.group)
+    }
+}
