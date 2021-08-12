@@ -5,13 +5,13 @@ android {
     buildToolsVersion BuildTools.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.qiyei.android.architecture"
         minSdkVersion BuildTools.minSdkVersion
         targetSdkVersion BuildTools.targetSdkVersion
         versionCode BuildTools.versionCode
         versionName BuildTools.versionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
     }
 
     buildTypes {
@@ -24,51 +24,23 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-    viewBinding {
-        enabled = true
-    }
 }
 
 dependencies {
 
+    compileOnly project(":architecture")
+
     implementation Kotlin.stdlib
     implementation AndroidX.core_ktx
     implementation AndroidX.appcompat
-    implementation AndroidX.lifecycle_extensions
     implementation AndroidX.material
-    implementation AndroidX.constraint_layout
 
-    implementation project(":architecture")
-    implementation project(":Provider")
-    runtimeOnly project(":lib_service_impl")
 
     implementation Hilt.hilt_android
     kapt Hilt.hilt_android_compiler
 
-    implementation Network.okhttp
 
     testImplementation Test.junit
     androidTestImplementation Test.android_test_junit
     androidTestImplementation Test.espresso_core
-}
-
-
-this.project.afterEvaluate { project ->
-    def buildTask = project.tasks.getByName('assembleRelease')
-    if(buildTask == null) {
-        throw GradleException('the assembleRelease task is not found')
-    }
-    buildTask.dependsOn customTask
-}
-
-task customTask(dependsOn: 'packageRelease') {
-    group("test")
-
-    description("任务名+闭包创建任务")
-    doLast {
-        println("任务：" + name + " 属于分组：" + customTask.group)
-    }
 }

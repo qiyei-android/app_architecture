@@ -4,3 +4,4 @@ include ':app'
 rootProject.name = "app_architecture"
 include ':Provider'
 includeBuild("plugin/plugin_version")
+include ':lib_service_impl'
