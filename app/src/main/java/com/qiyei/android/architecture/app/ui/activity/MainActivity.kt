@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        startActivity(Intent(this,HiltDemoActivity::class.java))
+        //startActivity(Intent(this,HiltDemoActivity::class.java))
+        startActivity(Intent(this,ServiceLoaderDemoActivity::class.java))
     }
 }
