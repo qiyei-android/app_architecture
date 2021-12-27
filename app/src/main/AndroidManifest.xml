@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_architecture">
         <activity
+            android:name=".ui.activity.ARouterDemoActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.KoinDemoActivity"
             android:exported="false" />
         <activity android:name=".ui.activity.HiltDemoActivity" />
